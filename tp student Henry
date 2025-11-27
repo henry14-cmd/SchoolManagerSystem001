@@ -1,0 +1,179 @@
+package model;
+
+import java.util.Date;
+
+public class Student {
+    // 1. Tous les champs sont privés (Encapsulation).
+    // 2. Le type de dateOfBirth est ajusté à String.
+    private String name;
+    private String surname;
+    private String email;
+    private String phone;
+    private String dateOfBirth;
+
+    // 3. Le Constructeur est à l'intérieur de la classe et a la syntaxe correcte.
+    public Student(String name, String surname, String email, String phone, String dateOfBirth) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    // --- Getters (Accesseurs) ---
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    // --- Setters (Mutateurs) ---
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    // --- Méthodes existantes ---
+
+    // Méthode simple pour afficher les informations de l'étudiant
+    public void displayStudentInfo() {
+        System.out.println(name + " " + surname + " est un étudiant(e) né en " + dateOfBirth + " et son contact est : " + phone);
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println("--- Test de la classe Student ---");
+
+        Student etudiant = new Student("Alice", "Tremblay", "alice.t@mail.com", "0612345678", "2000-01-01");
+
+        // 6. Appel de la méthode d'affichage sur l'objet créé.
+        System.out.print("Informations initiales: ");
+        etudiant.displayStudentInfo();
+
+        // Test des setters (modification)
+        etudiant.setEmail("alice.tremblay.new@mail.com");
+        etudiant.setPhone("0798765432");
+
+        // Test des getters (récupération d'une donnée spécifique)
+        System.out.println("Nouveau contact : " + etudiant.getPhone());
+        System.out.println("Nouveau Email : " + etudiant.getEmail());
+
+        System.out.print("Informations après modification: ");
+        etudiant.displayStudentInfo();
+    }
+}
+
+
+
+package model;
+
+import java.util.Date;
+
+public class Teacher {
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private String dateOfBirth;
+
+
+    //constructeur
+    public Teacher(String firstName, String lastName, String email, String phone, String dateOfBirth) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    //getters
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    //setters
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+    public static void main(String[] args) {
+        System.out.println("--- Test de la classe Professeur ---");
+
+        Teacher professeur = new Teacher("Henry", "Tremblay", "henry.t@univ.com", "0612345678", "1975-08-15");
+
+        // 6. Appel de la méthode d'affichage sur l'objet créé.
+        System.out.print("Informations initiales: ");
+        // Correction : Utilisation de displayTeacherInfo()
+        professeur.toString();
+
+        // Test des setters (modification)
+        professeur.setEmail("henry.tremblay.new@univ.com");
+        professeur.setPhone("0798765432");
+
+        // Test des getters (récupération d'une donnée spécifique)
+        System.out.println("Nouveau contact : " + professeur.getPhone());
+        System.out.println("Nouveau Email : " + professeur.getEmail());
+
+        System.out.print("Informations après modification: ");
+        // Correction : Utilisation de displayTeacherInfo()
+        professeur.toString();
+    }
+}
